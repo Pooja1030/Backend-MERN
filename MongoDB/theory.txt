@@ -1,0 +1,30 @@
+ Data Storage
+ Types of DB
+ What and why
+ Terminologies -- collections, documents, schemas, keys , models
+
+ Data storage -- where info of users are stored
+
+
+Types of sql
+ database -- 2 types of db -- sql and nosql
+ SQL -- data is kept in a same format -- tables
+
+ NoSQL -- there are no tables , there are objects present
+ MongoDB -- follows NoSQL theory 
+
+
+ Why mongodb -- to store the data
+
+ Terminologies --
+ There are 2 servers in a backend servers
+1. application server -- handles routes, accepts requests and (login,logout) 
+2. database servers -- there are lot of things in db like collections, docs, schemas ... 
+
+
+Database -> collections -> Document 
+         CODE LEVEL              DATABASE
+     -------------------------------------------
+          mongoose.connect  ->   database create
+           model create     ->   collection
+           CREATE code          ->   document
