@@ -5,6 +5,9 @@
 // setting up ejs for ejs pages
 // setting up public static files
 
+// get method -- browser to frontend
+// post method -- frontend to backend
+
 
 // dynamic
 const express = require('express');
