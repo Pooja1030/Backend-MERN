@@ -6,6 +6,63 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <main class="p-4 bg-gray-100 dark:bg-gray-800 h-screen w-screen">
+        <button onclick="showPopUp()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            upload file
+        </button>
+
+        <div class="pop hidden backdrop-blur fixed top-0 left-0 h-screen w-screen flex items-center justify-center">
+            
+  
+            <form
+            action="/upload"
+            method="post"
+            enctype="multipart/form-data"
+            >
+            <div class="flex items-center justify-center w-96">
+                
+            </div>
+
+            <button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mt-4">
+                Upload file
+            </button>
+
+        </form> 
+
+        <button class="absolute top-4 right-4 text-gray-500 dark:text-gray-400 text-xl" onclick="hidePopUp()">
+            <i class="ri-close-line"></i>
+        </button>
+    </div>
+
+    <div class="files mt-3 flex flex-col gap-2">
+        <% files.forEach((file)=>{ %>
+
+            <div class="p-2 cursor-pointer rounded-md bg-gray-300 flex justify-between">
+                <h1><%= file.originalname %></h1>
+
+                <a href="/download/<%= file.path %>" 
+                    class="text-blue-500 hover:text-blue-700"
+                    download="<%= file.originalname %>"
+                    target="_blank"
+                >
+                    <i class="ri-download-line"></i>
+                </a>
+
+            </div>
+        <% }) %>
+    </div>
+        
+    </main>
+    <script>
+
+        function showPopUp(){
+            document.querySelector('.pop').style.display = 'flex'
+        }
+        
+        function hidePopUp(){
+            document.querySelector('.pop').style.display = 'none'
+        }
+
+    </script>
 </body>
 </html>
