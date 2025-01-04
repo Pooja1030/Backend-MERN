@@ -6,7 +6,7 @@ const router = express.Router();
 const upload = require('../config/multer.config')
 const fileModel = require('../models/files.models')
 
-
+//  Router for home
 router.get('/home', authMiddleware, async (req,res) => {
 
     const userFiles = await fileModel.find({
@@ -18,6 +18,7 @@ router.get('/home', authMiddleware, async (req,res) => {
     });
 })
 
+// Router for uploading
 router.post('/upload', authMiddleware, upload.single('file'), async (req,res) => {
     
     const newFile = await fileModel.create({
